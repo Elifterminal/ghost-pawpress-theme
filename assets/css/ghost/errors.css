@@ -1,0 +1,40 @@
+/*
+ * Error page — "this page went walkies".
+ */
+
+.pw-error {
+    min-height: calc(100vh - var(--header-height));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--sp-7) var(--sp-5);
+    background: radial-gradient(
+        ellipse at center,
+        var(--color-accent-soft) 0%,
+        transparent 60%
+    );
+}
+
+.pw-error-code {
+    font-family: var(--font-display);
+    font-size: clamp(9rem, 18vw, 18rem);
+    line-height: 0.9;
+    color: var(--color-accent);
+    letter-spacing: -0.04em;
+    margin-bottom: var(--sp-3);
+}
+
+.pw-error-title {
+    font-family: var(--font-display);
+    font-size: var(--fs-2xl);
+    margin-bottom: var(--sp-3);
+}
+
+.pw-error-desc {
+    color: var(--color-text-soft);
+    font-size: var(--fs-lg);
+    max-width: 52rem;
+    margin-bottom: var(--sp-5);
+}

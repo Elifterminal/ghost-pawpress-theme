@@ -1,0 +1,144 @@
+/*
+ * Buttons — including the signature bone-shaped CTA.
+ *
+ * The bone shape uses a clip-path copied from Elifterminal/card-shapes
+ * (the dogbone SVG path). It's the signature visual motif of the theme.
+ */
+
+.pw-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--sp-2);
+    padding: var(--sp-3) var(--sp-5);
+    font-family: var(--font-sans);
+    font-size: var(--fs-md);
+    font-weight: 600;
+    line-height: 1.2;
+    border: 2px solid transparent;
+    border-radius: var(--radius-pill);
+    background: var(--color-accent);
+    color: #fff;
+    cursor: pointer;
+    transition: transform var(--dur-fast) var(--ease-bounce),
+                box-shadow var(--dur-med) var(--ease-out),
+                background var(--dur-fast) var(--ease-out);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.pw-btn:hover {
+    transform: translateY(-2px) rotate(-0.5deg);
+    background: var(--color-accent-deep);
+    color: #fff;
+    box-shadow: var(--pw-shadow-lift);
+}
+
+.pw-btn:active {
+    transform: translateY(0) rotate(0);
+}
+
+.pw-btn-outline {
+    background: transparent;
+    color: var(--color-text);
+    border-color: var(--color-border);
+}
+
+.pw-btn-outline:hover {
+    background: var(--color-text);
+    color: var(--color-bg);
+    border-color: var(--color-text);
+}
+
+.pw-btn-ghost {
+    background: transparent;
+    color: var(--color-accent);
+}
+
+.pw-btn-ghost:hover {
+    background: var(--color-accent-soft);
+    color: var(--color-accent-deep);
+    transform: translateY(-1px);
+}
+
+.pw-btn-sm {
+    padding: var(--sp-2) var(--sp-4);
+    font-size: var(--fs-sm);
+}
+
+.pw-btn-lg {
+    padding: var(--sp-4) var(--sp-6);
+    font-size: var(--fs-lg);
+}
+
+/* ── Bone-shaped CTA ──────────────────────────────────────── */
+
+.pw-btn-bone {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28rem;
+    height: 16rem;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    font-family: var(--font-display);
+    font-size: var(--fs-xl);
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    transition: transform var(--dur-med) var(--ease-bounce),
+                filter var(--dur-med) var(--ease-out);
+}
+
+.pw-btn-bone::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--color-accent);
+    clip-path: path('M43.7 1.6 C22.6 6.0 6.3 22.3 1.6 44.0 C0.1 50.4 0.0 62.0 1.3 68.0 C3.6 78.8 9.2 89.5 16.0 96.1 L18.4 98.5 L15.4 101.8 C8.7 109.1 4.3 117.2 1.8 126.9 C0.4 132.4 0.3 133.7 0.5 142.2 C0.7 150.2 1.0 152.4 2.4 156.9 C8.3 176.4 22.5 190.5 41.6 195.7 C46.9 197.1 59.5 197.1 65.4 195.6 C85.6 190.5 101.5 173.7 105.8 152.7 L106.6 148.9 L179.8 148.9 L253.0 148.9 L254.1 153.8 C259.0 175.6 276.9 192.9 298.3 196.4 C302.9 197.2 312.8 196.7 317.8 195.6 C338.0 190.8 354.1 173.7 358.4 152.5 C360.0 144.7 359.4 131.0 357.2 124.2 C354.2 115.1 349.1 106.3 343.7 101.1 L341.2 98.6 L344.4 95.3 C350.7 88.6 355.3 80.2 357.8 70.3 C359.0 65.5 359.3 63.0 359.3 56.2 C359.3 43.7 356.8 35.0 350.7 25.5 C340.2 9.4 322.6 0.0 304.5 0.9 C296.8 1.3 295.2 1.6 289.4 3.6 C276.8 7.8 264.3 19.2 258.5 31.4 C256.4 35.9 254.1 43.1 253.6 46.6 L253.2 49.5 L179.8 49.5 L106.5 49.5 L106.0 46.6 C105.5 42.8 102.9 34.8 101.1 31.1 C97.1 23.2 90.1 14.9 83.2 10.1 C80.1 7.8 72.2 3.8 70.2 3.4 C69.6 3.3 68.8 3.1 68.5 2.9 C68.2 2.7 65.8 2.1 63.2 1.6 C57.5 0.5 49.1 0.5 43.7 1.6 Z');
+    transition: background var(--dur-fast) var(--ease-out);
+    filter: drop-shadow(0 12px 24px rgba(224, 122, 95, 0.3));
+}
+
+.pw-btn-bone span {
+    position: relative;
+    z-index: 1;
+    padding: 0 var(--sp-5);
+    text-align: center;
+    line-height: 1.2;
+}
+
+.pw-btn-bone:hover {
+    transform: scale(1.04) rotate(-1.5deg);
+    color: #fff;
+}
+
+.pw-btn-bone:hover::before {
+    background: var(--color-accent-deep);
+}
+
+.pw-btn-bone:active {
+    transform: scale(0.98) rotate(0);
+}
+
+@media (max-width: 640px) {
+    .pw-btn-bone {
+        width: 22rem;
+        height: 12.5rem;
+        font-size: var(--fs-lg);
+    }
+}
+
+/* Wag animation for idle attention */
+@keyframes pw-wag {
+    0%, 100% { transform: rotate(-1deg); }
+    50%      { transform: rotate(1deg); }
+}
+
+.pw-btn-bone.pw-wag::before {
+    animation: pw-wag 2.4s var(--ease-out) infinite;
+    transform-origin: center;
+}

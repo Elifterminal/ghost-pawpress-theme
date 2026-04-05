@@ -1,0 +1,100 @@
+/*
+ * Feed — post grid for index/tag/author pages.
+ */
+
+.pw-feed {
+    padding: var(--sp-8) 0 var(--sp-9);
+}
+
+.pw-feed-header {
+    text-align: center;
+    margin-bottom: var(--sp-7);
+}
+
+.pw-feed-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+    gap: var(--sp-5);
+}
+
+.pw-post-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: transform var(--dur-med) var(--ease-bounce),
+                box-shadow var(--dur-med) var(--ease-out),
+                border-color var(--dur-fast) var(--ease-out);
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+.pw-post-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-accent);
+    box-shadow: var(--pw-shadow);
+    color: var(--color-text);
+}
+
+.pw-post-card-image {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--color-surface-alt);
+}
+
+.pw-post-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--dur-slow) var(--ease-out);
+}
+
+.pw-post-card:hover .pw-post-card-image img {
+    transform: scale(1.05);
+}
+
+.pw-post-card-body {
+    padding: var(--sp-5);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: var(--sp-3);
+}
+
+.pw-post-card-tags {
+    display: flex;
+    gap: var(--sp-2);
+}
+.pw-post-card-tags span {
+    font-size: var(--fs-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+.pw-post-card-title {
+    font-family: var(--font-display);
+    font-size: var(--fs-xl);
+    line-height: 1.2;
+    color: var(--color-text);
+}
+
+.pw-post-card-excerpt {
+    color: var(--color-text-soft);
+    font-size: var(--fs-sm);
+    line-height: 1.6;
+    flex: 1;
+}
+
+.pw-post-card-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-2);
+    font-size: var(--fs-xs);
+    color: var(--color-text-mute);
+    padding-top: var(--sp-3);
+    border-top: 1px solid var(--color-border);
+}

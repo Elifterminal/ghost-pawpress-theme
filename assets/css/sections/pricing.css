@@ -1,0 +1,108 @@
+/*
+ * Pricing — tiered cards with featured highlight.
+ */
+
+.pw-pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    gap: var(--sp-5);
+    max-width: 112rem;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+.pw-pricing-card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--sp-6);
+    background: var(--color-surface);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    transition: transform var(--dur-med) var(--ease-bounce),
+                box-shadow var(--dur-med) var(--ease-out);
+    position: relative;
+}
+
+.pw-pricing-card.pw-featured {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 4px var(--color-accent-soft);
+    transform: translateY(-8px);
+}
+
+.pw-pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--pw-shadow);
+}
+
+.pw-pricing-badge {
+    position: absolute;
+    top: -1.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: var(--sp-1) var(--sp-4);
+    background: var(--color-accent);
+    color: #fff;
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: var(--radius-pill);
+    white-space: nowrap;
+}
+
+.pw-pricing-name {
+    font-family: var(--font-display);
+    font-size: var(--fs-xl);
+    margin-bottom: var(--sp-2);
+}
+
+.pw-pricing-desc {
+    color: var(--color-text-soft);
+    font-size: var(--fs-sm);
+    margin-bottom: var(--sp-5);
+}
+
+.pw-pricing-amount {
+    font-family: var(--font-display);
+    font-size: var(--fs-4xl);
+    color: var(--color-text);
+    line-height: 1;
+    margin-bottom: var(--sp-5);
+}
+
+.pw-pricing-amount small {
+    font-size: var(--fs-md);
+    color: var(--color-text-soft);
+    font-family: var(--font-sans);
+    font-weight: 400;
+}
+
+.pw-pricing-features {
+    list-style: none;
+    margin-bottom: var(--sp-5);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-2);
+}
+
+.pw-pricing-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--sp-3);
+    font-size: var(--fs-sm);
+    color: var(--color-text-soft);
+}
+
+.pw-pricing-features li::before {
+    content: '';
+    flex: 0 0 auto;
+    width: 1.8rem;
+    height: 1.8rem;
+    margin-top: 0.2rem;
+    background: var(--color-accent-soft);
+    border-radius: var(--radius-pill);
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="%23E07A5F" d="M6.5 11L3 7.5l1-1 2.5 2.5L12 3.5l1 1z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+}

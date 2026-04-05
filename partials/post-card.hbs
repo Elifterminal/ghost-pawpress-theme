@@ -1,0 +1,21 @@
+<a class="pw-post-card" href="{{url}}">
+    {{#if feature_image}}
+        <div class="pw-post-card-image">
+            <img src="{{img_url feature_image size="m"}}" alt="{{title}}" loading="lazy" />
+        </div>
+    {{/if}}
+    <div class="pw-post-card-body">
+        {{#if primary_tag}}
+            <div class="pw-post-card-tags"><span>{{primary_tag.name}}</span></div>
+        {{/if}}
+        <h3 class="pw-post-card-title">{{title}}</h3>
+        {{#if excerpt}}
+            <p class="pw-post-card-excerpt">{{excerpt words="22"}}</p>
+        {{/if}}
+        <div class="pw-post-card-meta">
+            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM D, YYYY"}}</time>
+            <span>·</span>
+            <span>{{reading_time}}</span>
+        </div>
+    </div>
+</a>

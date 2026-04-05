@@ -1,0 +1,28 @@
+{{!< default}}
+
+<header class="pw-archive-header">
+    <div class="pw-container">
+        {{#tag}}
+            <span class="pw-eyebrow">Tag</span>
+            <h1 class="pw-archive-title">{{name}}</h1>
+            {{#if description}}
+                <p class="pw-archive-description">{{description}}</p>
+            {{/if}}
+        {{/tag}}
+    </div>
+</header>
+
+<section class="pw-section">
+    <div class="pw-container">
+        {{#if posts}}
+            <div class="pw-feed-grid">
+                {{#foreach posts}}
+                    {{> "post-card"}}
+                {{/foreach}}
+            </div>
+            {{pagination}}
+        {{else}}
+            <p class="pw-empty">No posts in this tag yet. Check back soon!</p>
+        {{/if}}
+    </div>
+</section>

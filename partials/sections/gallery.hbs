@@ -1,0 +1,22 @@
+<section class="pw-section" id="gallery">
+    <div class="pw-container-wide">
+        <span class="pw-eyebrow" style="display:block;text-align:center;margin:0 auto var(--sp-3);">Happy campers</span>
+        <h2 class="pw-section-title">Photos from the pack</h2>
+        <p class="pw-section-subtitle">A little wag of what we've been up to lately.</p>
+
+        <div class="pw-gallery-grid">
+            {{#get "posts" filter="tag:hash-gallery" limit="12" as |photos|}}
+                {{#foreach photos}}
+                    {{#if feature_image}}
+                    <figure class="pw-gallery-item" data-lightbox-src="{{img_url feature_image size="xl"}}">
+                        <img src="{{img_url feature_image size="m"}}" alt="{{title}}" loading="lazy" />
+                        {{#if title}}
+                            <figcaption class="pw-gallery-caption">{{title}}</figcaption>
+                        {{/if}}
+                    </figure>
+                    {{/if}}
+                {{/foreach}}
+            {{/get}}
+        </div>
+    </div>
+</section>

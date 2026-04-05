@@ -1,0 +1,27 @@
+<section class="pw-section" id="services">
+    <div class="pw-container">
+        <span class="pw-eyebrow" style="display:block;text-align:center;margin:0 auto var(--sp-3);">What we offer</span>
+        <h2 class="pw-section-title">Services built around your dog</h2>
+        <p class="pw-section-subtitle">Tap any card to see the full details, pricing, and what's included.</p>
+
+        <div class="pw-services-grid">
+            {{#get "posts" filter="tag:hash-service" limit="6" as |services|}}
+                {{#foreach services}}
+                    <a class="pw-service-card" href="{{url}}">
+                        <span class="pw-service-icon" aria-hidden="true">{{> "icons/paw"}}</span>
+                        <h3 class="pw-service-title">{{title}}</h3>
+                        {{#if custom_excerpt}}
+                            <p class="pw-service-price">{{custom_excerpt}}</p>
+                        {{/if}}
+                        {{#if excerpt}}
+                            <p class="pw-service-desc">{{excerpt words="28"}}</p>
+                        {{/if}}
+                        <span class="pw-service-link">
+                            Learn more {{> "icons/arrow-right"}}
+                        </span>
+                    </a>
+                {{/foreach}}
+            {{/get}}
+        </div>
+    </div>
+</section>

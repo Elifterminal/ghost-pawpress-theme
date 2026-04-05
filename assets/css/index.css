@@ -1,0 +1,31 @@
+/*
+ * Pawpress — Ghost theme for dog walkers, groomers, daycares,
+ * trainers, and pet enthusiasts. Built by Elif Digital.
+ */
+
+/* Tokens */
+@import "vars.css";
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=DM+Serif+Display&family=Playfair+Display:wght@500;600&family=JetBrains+Mono:wght@400&display=swap');
+
+/* Base */
+@import "components/base.css";
+@import "components/buttons.css";
+@import "components/forms.css";
+@import "components/header.css";
+@import "components/footer.css";
+
+/* Sections */
+@import "sections/hero.css";
+@import "sections/pack.css";
+@import "sections/services.css";
+@import "sections/gallery.css";
+@import "sections/testimonials.css";
+@import "sections/pricing.css";
+@import "sections/newsletter.css";
+
+/* Ghost */
+@import "ghost/content.css";
+@import "ghost/feed.css";
+@import "ghost/errors.css";

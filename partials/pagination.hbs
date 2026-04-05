@@ -1,0 +1,8 @@
+<nav class="pw-pagination" role="navigation" aria-label="Pagination">
+    {{#if prev}}
+        <a class="pw-btn pw-btn-outline" href="{{page_url prev}}">{{> "icons/arrow-left"}} Newer</a>
+    {{/if}}
+    {{#if next}}
+        <a class="pw-btn pw-btn-outline" href="{{page_url next}}">Older {{> "icons/arrow-right"}}</a>
+    {{/if}}
+</nav>

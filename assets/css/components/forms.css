@@ -1,0 +1,59 @@
+/*
+ * Forms — inputs, textareas, labels, newsletter form.
+ */
+
+.pw-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-2);
+    margin-bottom: var(--sp-4);
+}
+
+.pw-label {
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    color: var(--color-text-soft);
+}
+
+.pw-input,
+.pw-textarea,
+.pw-select {
+    width: 100%;
+    padding: var(--sp-3) var(--sp-4);
+    font-family: var(--font-sans);
+    font-size: var(--fs-md);
+    color: var(--color-text);
+    background: var(--color-surface);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: border-color var(--dur-fast) var(--ease-out),
+                box-shadow var(--dur-fast) var(--ease-out);
+}
+
+.pw-input:focus,
+.pw-textarea:focus,
+.pw-select:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 4px var(--color-accent-soft);
+}
+
+.pw-textarea {
+    min-height: 12rem;
+    resize: vertical;
+}
+
+.pw-form-inline {
+    display: flex;
+    gap: var(--sp-3);
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.pw-form-inline .pw-input {
+    flex: 1 1 24rem;
+}
+
+.pw-form-inline .pw-btn {
+    flex: 0 0 auto;
+}

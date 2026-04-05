@@ -1,0 +1,193 @@
+{
+    "name": "ghost-pawpress-theme",
+    "description": "Pawpress — a modern, cute, and friendly Ghost theme for dog walkers, groomers, doggy daycares, trainers, and pet enthusiasts. Complete toolkit with toggleable sections.",
+    "demo": "",
+    "version": "1.0.0",
+    "engines": {
+        "ghost": ">=5.0.0"
+    },
+    "license": "MIT",
+    "screenshots": {
+        "desktop": "assets/screenshot-desktop.jpg"
+    },
+    "scripts": {
+        "dev": "rollup -c --environment BUILD:development -w",
+        "build": "rollup -c --environment BUILD:production",
+        "zip": "npm run build && bestzip $npm_package_name.zip assets/* partials/**/* members/* *.hbs package.json",
+        "test": "npx gscan .",
+        "pretest": "npm run build"
+    },
+    "author": {
+        "name": "Elif Digital",
+        "email": "elif1203bot@gmail.com",
+        "url": "https://github.com/Elifterminal"
+    },
+    "gpm": {
+        "type": "theme",
+        "categories": [
+            "Business"
+        ]
+    },
+    "keywords": [
+        "ghost",
+        "theme",
+        "ghost-theme",
+        "business",
+        "pets",
+        "dogs",
+        "dog-walker",
+        "grooming",
+        "daycare",
+        "trainer"
+    ],
+    "devDependencies": {
+        "@babel/core": "^7.21.0",
+        "@babel/preset-env": "^7.20.2",
+        "@rollup/plugin-babel": "^6.0.3",
+        "@rollup/plugin-commonjs": "^29.0.0",
+        "@rollup/plugin-node-resolve": "^16.0.0",
+        "@rollup/plugin-terser": "^0.4.0",
+        "bestzip": "^2.2.1",
+        "postcss": "^8.4.24",
+        "postcss-import": "^16.0.0",
+        "postcss-preset-env": "^10.0.0",
+        "rollup": "^4.0.0",
+        "rollup-plugin-livereload": "^2.0.5",
+        "rollup-plugin-postcss": "^4.0.2"
+    },
+    "browserslist": [
+        "defaults"
+    ],
+    "config": {
+        "card_assets": true,
+        "posts_per_page": 12,
+        "image_sizes": {
+            "xxs": { "width": 30 },
+            "xs":  { "width": 100 },
+            "s":   { "width": 300 },
+            "m":   { "width": 600 },
+            "l":   { "width": 1200 },
+            "xl":  { "width": 2000 }
+        },
+        "custom": {
+            "accent_color": {
+                "type": "color",
+                "default": "#E07A5F",
+                "description": "Primary accent color (default: warm coral).",
+                "group": "site-wide"
+            },
+            "color_scheme": {
+                "type": "select",
+                "options": ["Light", "Dark", "Auto"],
+                "default": "Light",
+                "description": "Light is friendlier for pet businesses; dark is available if you prefer.",
+                "group": "site-wide"
+            },
+            "heading_font": {
+                "type": "select",
+                "options": ["Playful serif", "Modern serif", "Elegant serif", "Modern sans-serif"],
+                "default": "Playful serif",
+                "description": "Font used for the logo wordmark and large headings.",
+                "group": "site-wide"
+            },
+            "body_font": {
+                "type": "select",
+                "options": ["Modern sans-serif", "Modern serif"],
+                "default": "Modern sans-serif",
+                "description": "Font used for body text and UI.",
+                "group": "site-wide"
+            },
+            "phone_number": {
+                "type": "text",
+                "default": "",
+                "description": "Public phone number displayed in the footer and tap-to-call on mobile.",
+                "group": "site-wide"
+            },
+            "show_hero": {
+                "type": "boolean",
+                "default": true,
+                "description": "Show the hero with the bone-shaped call-to-action button.",
+                "group": "homepage"
+            },
+            "hero_title": {
+                "type": "text",
+                "default": "Every tail has a story.",
+                "description": "Headline displayed in the hero.",
+                "group": "homepage"
+            },
+            "hero_subtitle": {
+                "type": "text",
+                "default": "Friendly, professional dog care you can trust.",
+                "description": "Subtitle displayed under the hero headline.",
+                "group": "homepage"
+            },
+            "hero_cta_label": {
+                "type": "text",
+                "default": "Book a visit",
+                "description": "Label for the bone-shaped CTA button in the hero.",
+                "group": "homepage"
+            },
+            "hero_cta_url": {
+                "type": "text",
+                "default": "#services",
+                "description": "URL the hero CTA points to (booking page, contact form, etc.).",
+                "group": "homepage"
+            },
+            "show_pack": {
+                "type": "boolean",
+                "default": true,
+                "description": "Show the Meet the Pack section (staff, dogs, or team members).",
+                "group": "homepage"
+            },
+            "show_services": {
+                "type": "boolean",
+                "default": true,
+                "description": "Show the services section (built from posts tagged #service).",
+                "group": "homepage"
+            },
+            "show_gallery": {
+                "type": "boolean",
+                "default": true,
+                "description": "Show the photo gallery (built from posts tagged #gallery).",
+                "group": "homepage"
+            },
+            "show_testimonials": {
+                "type": "boolean",
+                "default": true,
+                "description": "Show the testimonial carousel (built from posts tagged #testimonial).",
+                "group": "homepage"
+            },
+            "show_pricing": {
+                "type": "boolean",
+                "default": false,
+                "description": "Show the pricing table section (built from posts tagged #pricing).",
+                "group": "homepage"
+            },
+            "show_hours": {
+                "type": "boolean",
+                "default": true,
+                "description": "Show opening hours and contact block in the footer.",
+                "group": "site-wide"
+            },
+            "hours_text": {
+                "type": "text",
+                "default": "Mon–Fri 7am–7pm | Sat 9am–5pm | Sun closed",
+                "description": "Opening hours string shown in the footer.",
+                "group": "site-wide"
+            },
+            "show_newsletter": {
+                "type": "boolean",
+                "default": true,
+                "description": "Show the newsletter signup block with Join the Pack copy.",
+                "group": "site-wide"
+            },
+            "show_sticky_cta": {
+                "type": "boolean",
+                "default": true,
+                "description": "Show a sticky booking bar at the bottom of the screen on mobile (reuses the hero CTA).",
+                "group": "site-wide"
+            }
+        }
+    },
+    "type": "module"
+}

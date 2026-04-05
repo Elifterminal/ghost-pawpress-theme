@@ -1,0 +1,42 @@
+{{!< default}}
+
+<header class="pw-archive-header pw-author-header">
+    <div class="pw-container">
+        {{#author}}
+            {{#if profile_image}}
+                <img class="pw-author-avatar" src="{{img_url profile_image size="m"}}" alt="{{name}}" />
+            {{/if}}
+            <span class="pw-eyebrow">Author</span>
+            <h1 class="pw-archive-title">{{name}}</h1>
+            {{#if bio}}
+                <p class="pw-archive-description">{{bio}}</p>
+            {{/if}}
+            <div class="pw-author-links">
+                {{#if website}}
+                    <a class="pw-btn pw-btn-outline" href="{{website}}" target="_blank" rel="noopener">Website</a>
+                {{/if}}
+                {{#if twitter}}
+                    <a class="pw-btn pw-btn-outline" href="{{social_url type="twitter"}}" target="_blank" rel="noopener">Twitter</a>
+                {{/if}}
+                {{#if facebook}}
+                    <a class="pw-btn pw-btn-outline" href="{{social_url type="facebook"}}" target="_blank" rel="noopener">Facebook</a>
+                {{/if}}
+            </div>
+        {{/author}}
+    </div>
+</header>
+
+<section class="pw-section">
+    <div class="pw-container">
+        {{#if posts}}
+            <div class="pw-feed-grid">
+                {{#foreach posts}}
+                    {{> "post-card"}}
+                {{/foreach}}
+            </div>
+            {{pagination}}
+        {{else}}
+            <p class="pw-empty">No posts yet from this author.</p>
+        {{/if}}
+    </div>
+</section>

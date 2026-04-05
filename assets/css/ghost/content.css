@@ -1,0 +1,206 @@
+/*
+ * Ghost post content — KG card output + prose styles.
+ */
+
+.pw-post {
+    max-width: var(--container-narrow);
+    margin: 0 auto;
+    padding: var(--sp-8) var(--sp-5) var(--sp-9);
+}
+
+.pw-post-header {
+    text-align: center;
+    margin-bottom: var(--sp-7);
+}
+
+.pw-post-tags {
+    display: inline-flex;
+    gap: var(--sp-2);
+    margin-bottom: var(--sp-3);
+}
+.pw-post-tags a {
+    font-size: var(--fs-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    padding: var(--sp-1) var(--sp-3);
+    background: var(--color-accent-soft);
+    color: var(--color-accent-deep);
+    border-radius: var(--radius-pill);
+}
+
+.pw-post-title {
+    font-size: clamp(3.2rem, 5vw, var(--fs-4xl));
+    margin-bottom: var(--sp-4);
+    letter-spacing: -0.03em;
+}
+
+.pw-post-excerpt {
+    font-size: var(--fs-lg);
+    color: var(--color-text-soft);
+    max-width: 60rem;
+    margin: 0 auto var(--sp-5);
+}
+
+.pw-post-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-3);
+    color: var(--color-text-soft);
+    font-size: var(--fs-sm);
+}
+
+.pw-post-author-avatar {
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: var(--radius-pill);
+    object-fit: cover;
+    border: 2px solid var(--color-accent-soft);
+}
+
+.pw-post-feature {
+    width: 100%;
+    max-height: 56rem;
+    object-fit: cover;
+    border-radius: var(--radius-xl);
+    margin-bottom: var(--sp-7);
+}
+
+.pw-content {
+    font-size: var(--fs-md);
+    line-height: 1.8;
+    color: var(--color-text);
+}
+
+.pw-content > * + * { margin-top: var(--sp-4); }
+
+.pw-content h1,
+.pw-content h2,
+.pw-content h3,
+.pw-content h4 {
+    margin-top: var(--sp-6);
+    margin-bottom: var(--sp-3);
+}
+
+.pw-content p {
+    margin-bottom: var(--sp-4);
+}
+
+.pw-content a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+.pw-content a:hover { color: var(--color-accent-deep); }
+
+.pw-content blockquote {
+    border-left: 4px solid var(--color-accent);
+    padding: var(--sp-3) var(--sp-5);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: var(--fs-lg);
+    color: var(--color-text);
+    background: var(--color-surface-alt);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    margin: var(--sp-5) 0;
+}
+
+.pw-content img {
+    border-radius: var(--radius-lg);
+    margin: var(--sp-5) 0;
+}
+
+.pw-content ul,
+.pw-content ol {
+    padding-left: var(--sp-5);
+    margin-bottom: var(--sp-4);
+}
+
+.pw-content li { margin-bottom: var(--sp-2); }
+
+.pw-content code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    padding: 0.2em 0.5em;
+    background: var(--color-surface-alt);
+    border-radius: var(--radius-sm);
+}
+
+.pw-content pre {
+    font-family: var(--font-mono);
+    background: var(--color-text);
+    color: var(--color-bg);
+    padding: var(--sp-4);
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+    font-size: var(--fs-sm);
+    line-height: 1.6;
+}
+
+.pw-content pre code {
+    background: transparent;
+    padding: 0;
+    color: inherit;
+}
+
+.pw-content hr {
+    border: 0;
+    height: 1px;
+    background: var(--color-border);
+    margin: var(--sp-6) 0;
+}
+
+.pw-content .kg-card {
+    margin: var(--sp-5) 0;
+}
+
+.pw-content .kg-bookmark-card {
+    display: block;
+    padding: var(--sp-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: border-color var(--dur-fast) var(--ease-out);
+}
+.pw-content .kg-bookmark-card:hover { border-color: var(--color-accent); }
+
+.pw-content .kg-gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    gap: var(--sp-3);
+}
+
+/* Koenig editor width classes — required by Ghost */
+.kg-width-wide,
+.pw-content .kg-width-wide {
+    position: relative;
+    width: min(100vw, 100rem);
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: none;
+}
+
+.kg-width-full,
+.pw-content .kg-width-full {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: none;
+}
+
+.kg-width-full img,
+.pw-content .kg-width-full img {
+    width: 100%;
+    border-radius: 0;
+}
+
+/* Pagination */
+.pw-pagination {
+    display: flex;
+    justify-content: center;
+    gap: var(--sp-4);
+    margin-top: var(--sp-7);
+}

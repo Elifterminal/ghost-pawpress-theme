@@ -1,0 +1,101 @@
+/*
+ * Hero — headline, subtitle, bone-shaped CTA, optional image.
+ */
+
+.pw-hero {
+    position: relative;
+    padding: var(--sp-10) 0 var(--sp-9);
+    background: radial-gradient(
+        ellipse at 20% 20%,
+        var(--color-accent-soft) 0%,
+        transparent 55%
+    ), var(--color-bg);
+    overflow: hidden;
+}
+
+.pw-hero-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 var(--sp-5);
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: var(--sp-8);
+    align-items: center;
+}
+
+.pw-hero-title {
+    font-size: clamp(3.6rem, 6vw, var(--fs-5xl));
+    line-height: 1.02;
+    margin-bottom: var(--sp-4);
+    letter-spacing: -0.035em;
+}
+
+.pw-hero-title em {
+    font-style: italic;
+    color: var(--color-accent);
+}
+
+.pw-hero-subtitle {
+    font-size: var(--fs-lg);
+    color: var(--color-text-soft);
+    max-width: 48rem;
+    margin-bottom: var(--sp-6);
+    line-height: 1.5;
+}
+
+.pw-hero-cta-row {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-5);
+    flex-wrap: wrap;
+}
+
+.pw-hero-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42rem;
+}
+
+.pw-hero-image {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    border-radius: var(--radius-xl);
+    object-fit: cover;
+    box-shadow: var(--pw-shadow);
+    transform: rotate(-2deg);
+    transition: transform var(--dur-slow) var(--ease-out);
+}
+
+.pw-hero-image:hover { transform: rotate(0); }
+
+.pw-hero-sticker {
+    position: absolute;
+    top: -2rem;
+    right: -1rem;
+    width: 12rem;
+    height: 12rem;
+    background: var(--color-accent);
+    color: #fff;
+    border-radius: var(--radius-pill);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: var(--fs-md);
+    font-weight: 600;
+    line-height: 1.1;
+    padding: var(--sp-3);
+    transform: rotate(8deg);
+    box-shadow: var(--pw-shadow-lift);
+}
+
+@media (max-width: 860px) {
+    .pw-hero { padding: var(--sp-7) 0 var(--sp-8); }
+    .pw-hero-inner { grid-template-columns: 1fr; gap: var(--sp-5); }
+    .pw-hero-visual { min-height: 32rem; order: -1; }
+    .pw-hero-image { aspect-ratio: 4 / 3; }
+    .pw-hero-sticker { width: 9rem; height: 9rem; font-size: var(--fs-sm); top: -1rem; right: 1rem; }
+}

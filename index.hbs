@@ -1,0 +1,36 @@
+{{!< default}}
+
+{{#is "home"}}
+    {{#if @custom.show_hero}}{{> "sections/hero"}}{{/if}}
+    {{#if @custom.show_pack}}{{> "sections/pack"}}{{/if}}
+    {{#if @custom.show_services}}{{> "sections/services"}}{{/if}}
+    {{#if @custom.show_gallery}}{{> "sections/gallery"}}{{/if}}
+    {{#if @custom.show_testimonials}}{{> "sections/testimonials"}}{{/if}}
+    {{#if @custom.show_pricing}}{{> "sections/pricing"}}{{/if}}
+{{/is}}
+
+{{#if posts}}
+<section class="pw-section pw-feed-section">
+    <div class="pw-container">
+        <span class="pw-eyebrow" style="display:block;text-align:center;margin:0 auto var(--sp-3);">From the blog</span>
+        <h2 class="pw-section-title">Latest stories</h2>
+        <p class="pw-section-subtitle">Tips, tail-wags, and updates from the pack.</p>
+
+        <div class="pw-feed-grid">
+            {{#foreach posts}}
+                {{> "post-card"}}
+            {{/foreach}}
+        </div>
+
+        {{pagination}}
+    </div>
+</section>
+{{/if}}
+
+{{#if @custom.show_newsletter}}
+<section class="pw-section">
+    <div class="pw-container">
+        {{> "sections/newsletter"}}
+    </div>
+</section>
+{{/if}}

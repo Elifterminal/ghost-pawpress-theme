@@ -1,0 +1,27 @@
+<section class="pw-section" id="pricing">
+    <div class="pw-container">
+        <span class="pw-eyebrow" style="display:block;text-align:center;margin:0 auto var(--sp-3);">Straightforward rates</span>
+        <h2 class="pw-section-title">Pricing</h2>
+        <p class="pw-section-subtitle">No surprises, no hidden fees. Everything you need included.</p>
+
+        <div class="pw-pricing-grid">
+            {{#get "posts" filter="tag:hash-pricing" limit="4" as |plans|}}
+                {{#foreach plans}}
+                    <article class="pw-pricing-card{{#if featured}} pw-featured{{/if}}">
+                        {{#if featured}}
+                            <span class="pw-pricing-badge">Most popular</span>
+                        {{/if}}
+                        <h3 class="pw-pricing-name">{{title}}</h3>
+                        {{#if custom_excerpt}}
+                            <div class="pw-pricing-amount">{{custom_excerpt}}</div>
+                        {{/if}}
+                        {{#if excerpt}}
+                            <p class="pw-pricing-desc">{{excerpt words="18"}}</p>
+                        {{/if}}
+                        <a class="pw-btn" href="{{url}}">Choose plan</a>
+                    </article>
+                {{/foreach}}
+            {{/get}}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,140 @@
+/*
+ * Testimonials — carousel + paw-print divider.
+ */
+
+.pw-testimonials {
+    background: var(--color-surface-alt);
+    position: relative;
+    overflow: hidden;
+}
+
+.pw-carousel {
+    max-width: 80rem;
+    margin: 0 auto;
+    position: relative;
+}
+
+.pw-carousel-track {
+    display: flex;
+    transition: transform var(--dur-slow) var(--ease-out);
+}
+
+.pw-carousel-slide {
+    flex: 0 0 100%;
+    padding: 0 var(--sp-5);
+}
+
+.pw-testimonial {
+    text-align: center;
+    padding: var(--sp-6);
+    background: var(--color-surface);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border);
+}
+
+.pw-testimonial-quote {
+    font-family: var(--font-display);
+    font-size: var(--fs-xl);
+    line-height: 1.5;
+    color: var(--color-text);
+    margin-bottom: var(--sp-5);
+    font-style: italic;
+}
+
+.pw-testimonial-quote::before,
+.pw-testimonial-quote::after {
+    content: '"';
+    color: var(--color-accent);
+    font-size: 1.3em;
+}
+
+.pw-testimonial-attrib {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--sp-3);
+}
+
+.pw-testimonial-avatar {
+    width: 5.2rem;
+    height: 5.2rem;
+    border-radius: var(--radius-pill);
+    object-fit: cover;
+    border: 2px solid var(--color-accent-soft);
+}
+
+.pw-testimonial-name {
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.pw-testimonial-sub {
+    font-size: var(--fs-xs);
+    color: var(--color-text-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.pw-carousel-nav {
+    display: flex;
+    justify-content: center;
+    gap: var(--sp-2);
+    margin-top: var(--sp-5);
+}
+
+.pw-carousel-dot {
+    width: 1rem;
+    height: 1rem;
+    border-radius: var(--radius-pill);
+    background: var(--color-border);
+    border: 0;
+    cursor: pointer;
+    transition: background var(--dur-fast) var(--ease-out),
+                transform var(--dur-fast) var(--ease-out);
+}
+
+.pw-carousel-dot.pw-active {
+    background: var(--color-accent);
+    transform: scale(1.4);
+}
+
+.pw-carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4.8rem;
+    height: 4.8rem;
+    border-radius: var(--radius-pill);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--pw-shadow);
+}
+.pw-carousel-arrow:hover { background: var(--color-accent); color: #fff; border-color: var(--color-accent); }
+.pw-carousel-arrow.pw-prev { left: -2rem; }
+.pw-carousel-arrow.pw-next { right: -2rem; }
+
+@media (max-width: 860px) {
+    .pw-carousel-arrow { display: none; }
+}
+
+/* ── Paw divider ──────────────────────────────────────────── */
+
+.pw-paw-divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--sp-3);
+    color: var(--color-accent);
+    opacity: 0.55;
+    margin: var(--sp-5) 0;
+}
+
+.pw-paw-divider svg {
+    width: 2.4rem;
+    height: 2.4rem;
+}

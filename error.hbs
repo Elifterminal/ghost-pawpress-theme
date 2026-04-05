@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}" data-theme="{{@custom.color_scheme}}" data-heading-font="{{@custom.heading_font}}" data-body-font="{{@custom.body_font}}">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{meta_title}}</title>
+    <link rel="stylesheet" href="{{asset "built/index.css"}}" />
+    <style>:root { --color-accent: {{@custom.accent_color}}; }</style>
+    {{ghost_head}}
+</head>
+<body class="{{body_class}} pw-theme pw-error-page">
+    <main class="pw-error">
+        <div class="pw-container pw-container-narrow" style="text-align:center;">
+            <div class="pw-error-paw">{{> "icons/paw"}}</div>
+            <h1 class="pw-error-code">{{statusCode}}</h1>
+            <p class="pw-error-message">{{message}}</p>
+            <p class="pw-error-hint">Looks like this page ran off chasing a squirrel.</p>
+            <a class="pw-btn pw-btn-bone pw-wag" href="{{@site.url}}">Back home</a>
+
+            {{#if errorDetails}}
+                <section class="pw-error-details">
+                    <h4>Theme errors:</h4>
+                    <ul>
+                        {{#foreach errorDetails}}
+                            <li>
+                                <strong>{{{rule}}}</strong>
+                                {{#foreach failures}}
+                                    <br><small>Ref: {{ref}} — {{message}}</small>
+                                {{/foreach}}
+                            </li>
+                        {{/foreach}}
+                    </ul>
+                </section>
+            {{/if}}
+        </div>
+    </main>
+    {{ghost_foot}}
+</body>
+</html>

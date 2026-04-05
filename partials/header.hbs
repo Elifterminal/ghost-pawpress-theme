@@ -1,0 +1,34 @@
+<header class="pw-header" role="banner">
+    <div class="pw-header-inner">
+        <a class="pw-logo" href="{{@site.url}}">
+            {{#if @site.logo}}
+                <img src="{{img_url @site.logo size="m"}}" alt="{{@site.title}}" />
+            {{else}}
+                <span class="pw-logo-icon" aria-hidden="true">
+                    {{> "icons/paw"}}
+                </span>
+                {{@site.title}}
+            {{/if}}
+        </a>
+
+        <button class="pw-nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                <path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+
+        <nav class="pw-nav" aria-label="Main navigation">
+            {{navigation}}
+
+            <div class="pw-header-actions">
+                {{#if @site.members_enabled}}
+                    {{#unless @member}}
+                        <a class="pw-btn pw-btn-sm" href="#/portal/signup">Subscribe</a>
+                    {{else}}
+                        <a class="pw-btn pw-btn-outline pw-btn-sm" href="#/portal/account">Account</a>
+                    {{/unless}}
+                {{/if}}
+            </div>
+        </nav>
+    </div>
+</header>

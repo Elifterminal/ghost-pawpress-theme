@@ -1,0 +1,20 @@
+{{!< ../default}}
+
+<section class="pw-section pw-members">
+    <div class="pw-container pw-container-narrow" style="text-align:center;">
+        {{#if @member}}
+            <script>window.location = '{{@site.url}}';</script>
+        {{else}}
+            <span class="pw-eyebrow">Join the pack</span>
+            <h1 class="pw-section-title">Sign up for {{@site.title}}</h1>
+            {{#if @site.description}}
+                <p class="pw-section-subtitle">{{@site.description}}</p>
+            {{/if}}
+            <form class="pw-form-inline" data-members-form="signup">
+                <input class="pw-input" data-members-email type="email" required placeholder="your@email.com" aria-label="Email" autocomplete="email" autofocus />
+                <button class="pw-btn" type="submit">Subscribe</button>
+            </form>
+            <p class="pw-members-hint">Already a member? <a href="{{@site.url}}/#/portal/signin">Sign in</a>.</p>
+        {{/if}}
+    </div>
+</section>

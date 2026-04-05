@@ -1,0 +1,49 @@
+<footer class="pw-footer" role="contentinfo">
+    <div class="pw-container-wide">
+        <div class="pw-footer-grid">
+            <div class="pw-footer-col">
+                <h4>{{@site.title}}</h4>
+                {{#if @site.description}}
+                    <p>{{@site.description}}</p>
+                {{/if}}
+                {{#if @custom.phone_number}}
+                    <a class="pw-footer-phone" href="tel:{{@custom.phone_number}}">
+                        {{> "icons/phone"}}
+                        <span>{{@custom.phone_number}}</span>
+                    </a>
+                {{/if}}
+            </div>
+
+            {{#if @custom.show_hours}}
+            <div class="pw-footer-col">
+                <h4>Visit us</h4>
+                <p class="pw-footer-hours">{{@custom.hours_text}}</p>
+                {{#if @site.secondary_navigation}}
+                    {{navigation type="secondary"}}
+                {{/if}}
+            </div>
+            {{/if}}
+
+        </div>
+
+        {{#if @custom.show_newsletter}}
+            {{#if @site.members_enabled}}
+                {{> "sections/newsletter"}}
+            {{/if}}
+        {{/if}}
+
+        <div class="pw-footer-bottom">
+            <span>
+                © {{date format="YYYY"}} {{@site.title}}
+            </span>
+            <span class="pw-paw-divider" aria-hidden="true">
+                {{> "icons/paw"}}
+                {{> "icons/paw"}}
+                {{> "icons/paw"}}
+            </span>
+            <span>
+                Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+            </span>
+        </div>
+    </div>
+</footer>

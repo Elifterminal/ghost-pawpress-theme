@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}" data-theme="{{@custom.color_scheme}}" data-heading-font="{{@custom.heading_font}}" data-body-font="{{@custom.body_font}}">
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{asset "built/index.css"}}" />
+    <script src="{{asset "built/index.js"}}" defer></script>
+    <style>
+        :root { --color-accent: {{@custom.accent_color}}; }
+    </style>
+
+    <title>{{meta_title}}</title>
+
+    {{ghost_head}}
+
+</head>
+<body class="{{body_class}} pw-theme{{#if @custom.show_sticky_cta}} pw-has-sticky-cta{{/if}}">
+
+    <a href="#pw-main" class="pw-skip-link">Skip to content</a>
+
+    {{> "header"}}
+
+    <main id="pw-main" role="main">
+        {{{body}}}
+    </main>
+
+    {{> "footer"}}
+
+    {{#if @custom.show_sticky_cta}}
+        {{> "sticky-cta"}}
+    {{/if}}
+
+    {{> "lightbox"}}
+
+{{ghost_foot}}
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<section class="pw-section pw-testimonials" id="testimonials">
+    <div class="pw-container">
+        <span class="pw-eyebrow" style="display:block;text-align:center;margin:0 auto var(--sp-3);">Kind words</span>
+        <h2 class="pw-section-title">What clients say</h2>
+
+        <div class="pw-carousel" data-carousel>
+            <button class="pw-carousel-arrow pw-prev" type="button" aria-label="Previous">
+                {{> "icons/arrow-left"}}
+            </button>
+
+            <div class="pw-carousel-track" data-carousel-track>
+                {{#get "posts" filter="tag:hash-testimonial" limit="8" as |reviews|}}
+                    {{#foreach reviews}}
+                        <div class="pw-carousel-slide">
+                            <blockquote class="pw-testimonial">
+                                <p class="pw-testimonial-quote">{{excerpt words="42"}}</p>
+                                <div class="pw-testimonial-attrib">
+                                    {{#if feature_image}}
+                                        <img class="pw-testimonial-avatar" src="{{img_url feature_image size="xs"}}" alt="{{title}}" loading="lazy" />
+                                    {{/if}}
+                                    <div>
+                                        <div class="pw-testimonial-name">{{title}}</div>
+                                        {{#if custom_excerpt}}
+                                            <div class="pw-testimonial-sub">{{custom_excerpt}}</div>
+                                        {{/if}}
+                                    </div>
+                                </div>
+                            </blockquote>
+                        </div>
+                    {{/foreach}}
+                {{/get}}
+            </div>
+
+            <button class="pw-carousel-arrow pw-next" type="button" aria-label="Next">
+                {{> "icons/arrow-right"}}
+            </button>
+
+            <div class="pw-carousel-nav" data-carousel-nav></div>
+        </div>
+    </div>
+</section>

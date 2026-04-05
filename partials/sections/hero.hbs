@@ -1,0 +1,27 @@
+<section class="pw-hero">
+    <div class="pw-hero-inner">
+        <div class="pw-hero-content">
+            <span class="pw-eyebrow">{{@site.title}}</span>
+            <h1 class="pw-hero-title">{{@custom.hero_title}}</h1>
+            <p class="pw-hero-subtitle">{{@custom.hero_subtitle}}</p>
+            <div class="pw-hero-cta-row">
+                <a class="pw-btn-bone pw-wag" href="{{@custom.hero_cta_url}}">
+                    <span>{{@custom.hero_cta_label}}</span>
+                </a>
+                {{#if @custom.phone_number}}
+                    <a class="pw-btn pw-btn-outline" href="tel:{{@custom.phone_number}}">
+                        {{> "icons/phone"}}
+                        <span>{{@custom.phone_number}}</span>
+                    </a>
+                {{/if}}
+            </div>
+        </div>
+
+        {{#if @site.cover_image}}
+        <div class="pw-hero-visual">
+            <img class="pw-hero-image" src="{{img_url @site.cover_image size="l"}}" alt="{{@site.title}}" loading="eager" />
+            <div class="pw-hero-sticker">Bonded<br/>& insured</div>
+        </div>
+        {{/if}}
+    </div>
+</section>
