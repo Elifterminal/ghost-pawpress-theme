@@ -1,0 +1,100 @@
+/*
+ * Pawpress — Minimal mode overrides
+ *
+ * Scoped under [data-design="Minimal"]. Narrative is the default stylesheet
+ * (no prefix needed). Minimal swaps out the signature flourishes for
+ * standard shapes so marketplace reviewers and conservative audiences have
+ * a safe fallback. Content parity is identical — only shape and motion change.
+ *
+ * Overrides:
+ * - Pricing: bone-clip cards → pill-shaped rounded cards with visible features list
+ * - Services: bone-silhouette decorator removed
+ * - Buttons: bone-shaped CTA → pill CTA, wag animation disabled
+ * - Testimonials: paw divider hidden
+ * - Footer: paw divider hidden
+ * - Motion: marquee/bounce animations pared back
+ */
+
+[data-design="Minimal"] .pw-pricing-card {
+    /* Shape: pill-shaped rounded rectangle instead of bone */
+    aspect-ratio: auto;
+    clip-path: none;
+    -webkit-clip-path: none;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--color-border);
+
+    /* Layout: reclaim the waist padding for real content */
+    padding: var(--sp-7) var(--sp-6);
+    min-height: 42rem;
+
+    /* Shadow: standard box-shadow works again once clip-path is gone */
+    filter: none;
+    box-shadow: var(--pw-shadow);
+}
+
+[data-design="Minimal"] .pw-pricing-card:hover {
+    transform: translateY(-6px);
+    filter: none;
+    box-shadow: var(--pw-shadow-lift);
+}
+
+[data-design="Minimal"] .pw-pricing-card.pw-featured {
+    /* Featured: keep the coral fill, drop the aggressive scale */
+    transform: translateY(-6px);
+    border: none;
+}
+[data-design="Minimal"] .pw-pricing-card.pw-featured:hover {
+    transform: translateY(-12px);
+}
+
+[data-design="Minimal"] .pw-pricing-badge {
+    /* Badge sits at the top of the pill now, not floating over a bone */
+    top: var(--sp-4);
+}
+
+/* Features list is hidden in Narrative (no room in the bone waist)
+   — in Minimal the card is tall enough to show it */
+[data-design="Minimal"] .pw-pricing-features {
+    display: block;
+    list-style: none;
+    padding: 0;
+    margin: var(--sp-4) 0;
+    text-align: left;
+    font-size: var(--fs-sm);
+    line-height: 1.8;
+}
+[data-design="Minimal"] .pw-pricing-features li {
+    padding-left: var(--sp-4);
+    position: relative;
+    opacity: 0.85;
+}
+[data-design="Minimal"] .pw-pricing-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+/* Services: remove the bone-silhouette decorator */
+[data-design="Minimal"] .pw-service-card::after {
+    display: none;
+}
+
+/* Hero bone CTA is intentionally unchanged in Minimal mode — it's a
+   single, prominent decorative element, not a repeating grid shape, so
+   there's no marketplace-review reason to strip it. Keeps the theme's
+   personality alive even when everything else is quieted down. */
+
+/* Paw dividers: hidden in Minimal */
+[data-design="Minimal"] .pw-paw-divider {
+    display: none;
+}
+
+/* Respect reduced motion everywhere anyway, but in Minimal also strip
+   the signature bounce easing on hover transforms */
+[data-design="Minimal"] .pw-pricing-card,
+[data-design="Minimal"] .pw-pack-card,
+[data-design="Minimal"] .pw-service-card {
+    transition-timing-function: var(--ease-out);
+}

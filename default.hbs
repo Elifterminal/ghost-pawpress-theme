@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{@site.locale}}" data-theme="{{@custom.color_scheme}}" data-heading-font="{{@custom.heading_font}}" data-body-font="{{@custom.body_font}}">
+<html lang="{{@site.locale}}" data-theme="{{@custom.color_scheme}}" data-heading-font="{{@custom.heading_font}}" data-body-font="{{@custom.body_font}}" data-design="{{@custom.design_mode}}" data-palette="{{@custom.palette}}" data-card-size="{{@custom.card_size}}">
 <head>
 
     <meta charset="utf-8" />
@@ -15,7 +15,7 @@
     {{ghost_head}}
 
 </head>
-<body class="{{body_class}} pw-theme{{#if @custom.show_sticky_cta}} pw-has-sticky-cta{{/if}}">
+<body class="{{body_class}} pw-theme pw-has-sticky-cta">
 
     <a href="#pw-main" class="pw-skip-link">Skip to content</a>
 
@@ -27,11 +27,18 @@
 
     {{> "footer"}}
 
-    {{#if @custom.show_sticky_cta}}
-        {{> "sticky-cta"}}
-    {{/if}}
+    {{> "sticky-cta"}}
 
     {{> "lightbox"}}
+
+    {{!-- Global SVG shape definitions (clipPath for bone-shaped cards, etc.) --}}
+    <svg width="0" height="0" aria-hidden="true" style="position:absolute">
+        <defs>
+            <clipPath id="pw-bone-clip" clipPathUnits="objectBoundingBox">
+                <path d="M 0.1214 0.0081 C 0.0628 0.0305 0.0175 0.1132 0.0044 0.2234 C 0.0003 0.2558 0.0000 0.3147 0.0036 0.3452 C 0.0100 0.4000 0.0256 0.4543 0.0444 0.4878 L 0.0511 0.5000 L 0.0428 0.5168 C 0.0242 0.5538 0.0119 0.5949 0.0050 0.6442 C 0.0011 0.6721 0.0008 0.6787 0.0014 0.7218 C 0.0019 0.7624 0.0028 0.7736 0.0067 0.7964 C 0.0231 0.8954 0.0625 0.9670 0.1156 0.9934 C 0.1303 1.0005 0.1653 1.0005 0.1817 0.9929 C 0.2378 0.9670 0.2819 0.8817 0.2939 0.7751 L 0.2961 0.7558 L 0.4994 0.7558 L 0.7028 0.7558 L 0.7058 0.7807 C 0.7194 0.8914 0.7692 0.9792 0.8286 0.9970 C 0.8414 1.0010 0.8689 0.9985 0.8828 0.9929 C 0.9389 0.9685 0.9836 0.8817 0.9956 0.7741 C 1.0000 0.7345 0.9983 0.6650 0.9922 0.6305 C 0.9839 0.5843 0.9697 0.5396 0.9547 0.5132 L 0.9478 0.5005 L 0.9567 0.4838 C 0.9742 0.4497 0.9869 0.4071 0.9939 0.3569 C 0.9972 0.3325 0.9981 0.3198 0.9981 0.2853 C 0.9981 0.2218 0.9911 0.1777 0.9742 0.1294 C 0.9450 0.0477 0.8961 0.0000 0.8458 0.0046 C 0.8244 0.0066 0.8200 0.0081 0.8039 0.0183 C 0.7689 0.0396 0.7342 0.0975 0.7181 0.1594 C 0.7122 0.1822 0.7058 0.2188 0.7044 0.2365 L 0.7033 0.2513 L 0.4994 0.2513 L 0.2958 0.2513 L 0.2944 0.2365 C 0.2931 0.2173 0.2858 0.1766 0.2808 0.1579 C 0.2697 0.1178 0.2503 0.0756 0.2311 0.0513 C 0.2225 0.0396 0.2006 0.0193 0.1950 0.0173 C 0.1933 0.0168 0.1911 0.0157 0.1903 0.0147 C 0.1894 0.0137 0.1828 0.0107 0.1756 0.0081 C 0.1597 0.0025 0.1364 0.0025 0.1214 0.0081 Z"/>
+            </clipPath>
+        </defs>
+    </svg>
 
 {{ghost_foot}}
 

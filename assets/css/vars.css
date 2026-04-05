@@ -82,6 +82,23 @@
     --dur-fast: 0.18s;
     --dur-med: 0.32s;
     --dur-slow: 0.6s;
+
+    /* Card sizing — controlled by @custom.card_size (Cozy | Default | Roomy).
+       Pricing has a higher floor because the bone waist needs room for text. */
+    --pw-pack-min:     22rem;
+    --pw-services-min: 28rem;
+    --pw-pricing-min:  40rem;
+}
+
+[data-card-size="Cozy"] {
+    --pw-pack-min:     18rem;
+    --pw-services-min: 24rem;
+    --pw-pricing-min:  36rem;   /* floor for bone waist legibility */
+}
+[data-card-size="Roomy"] {
+    --pw-pack-min:     28rem;
+    --pw-services-min: 36rem;
+    --pw-pricing-min:  52rem;
 }
 
 /* Dark mode */

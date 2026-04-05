@@ -1,0 +1,180 @@
+/*
+ * Pawpress — palette presets
+ *
+ * Each preset overrides the semantic color variables so it cascades
+ * through every component without per-component changes. The user's
+ * accent_color setting still wins (applied as an inline style on :root
+ * via default.hbs), so palettes are a "mood" and the accent fine-tunes
+ * the highlight hue on top.
+ *
+ * Scoped to [data-palette="..."] on <html>. Default (Coral & Cream)
+ * matches vars.css so it needs no override block.
+ */
+
+[data-palette="Sage & Linen"] {
+    --pw-cream:        #F4F1E8;
+    --pw-sand:         #E7E2D2;
+    --pw-sand-deep:    #D6CFBA;
+    --pw-charcoal:     #2F322B;
+    --pw-charcoal-60:  #5B5F55;
+    --pw-charcoal-30:  #9FA298;
+    --pw-coral:        #7D9B76;
+    --pw-coral-deep:   #5E7D57;
+    --pw-coral-soft:   #D8E3D3;
+
+    --color-bg:        var(--pw-cream);
+    --color-surface:   #FFFFFF;
+    --color-surface-alt: var(--pw-sand);
+    --color-text:      var(--pw-charcoal);
+    --color-text-soft: var(--pw-charcoal-60);
+    --color-text-mute: var(--pw-charcoal-30);
+    --color-border:    var(--pw-sand-deep);
+    --color-accent:    var(--pw-coral);
+    --color-accent-deep: var(--pw-coral-deep);
+    --color-accent-soft: var(--pw-coral-soft);
+    --color-secondary: #E07A5F;
+}
+
+[data-palette="Rose & Ivory"] {
+    --pw-cream:        #FBF5F2;
+    --pw-sand:         #F2E4DE;
+    --pw-sand-deep:    #E3CDC3;
+    --pw-charcoal:     #3A2A2A;
+    --pw-charcoal-60:  #6B5656;
+    --pw-charcoal-30:  #AA9998;
+    --pw-coral:        #D4748A;
+    --pw-coral-deep:   #B25770;
+    --pw-coral-soft:   #F7D9E1;
+
+    --color-bg:        var(--pw-cream);
+    --color-surface:   #FFFFFF;
+    --color-surface-alt: var(--pw-sand);
+    --color-text:      var(--pw-charcoal);
+    --color-text-soft: var(--pw-charcoal-60);
+    --color-text-mute: var(--pw-charcoal-30);
+    --color-border:    var(--pw-sand-deep);
+    --color-accent:    var(--pw-coral);
+    --color-accent-deep: var(--pw-coral-deep);
+    --color-accent-soft: var(--pw-coral-soft);
+    --color-secondary: #7D9B76;
+}
+
+[data-palette="Charcoal & Mustard"] {
+    --pw-cream:        #F5F3EE;
+    --pw-sand:         #E8E4D8;
+    --pw-sand-deep:    #D2CCBA;
+    --pw-charcoal:     #232220;
+    --pw-charcoal-60:  #55524C;
+    --pw-charcoal-30:  #96918A;
+    --pw-coral:        #D4A24C;
+    --pw-coral-deep:   #B07F29;
+    --pw-coral-soft:   #F3E4BE;
+
+    --color-bg:        var(--pw-cream);
+    --color-surface:   #FFFFFF;
+    --color-surface-alt: var(--pw-sand);
+    --color-text:      var(--pw-charcoal);
+    --color-text-soft: var(--pw-charcoal-60);
+    --color-text-mute: var(--pw-charcoal-30);
+    --color-border:    var(--pw-sand-deep);
+    --color-accent:    var(--pw-coral);
+    --color-accent-deep: var(--pw-coral-deep);
+    --color-accent-soft: var(--pw-coral-soft);
+    --color-secondary: #7D9B76;
+}
+
+[data-palette="Ocean & Sand"] {
+    --pw-cream:        #F6F3EC;
+    --pw-sand:         #EAE3D1;
+    --pw-sand-deep:    #D6CCB1;
+    --pw-charcoal:     #1E2A33;
+    --pw-charcoal-60:  #4E5B64;
+    --pw-charcoal-30:  #94A0A8;
+    --pw-coral:        #3E8EA8;
+    --pw-coral-deep:   #216F89;
+    --pw-coral-soft:   #C8E1EA;
+
+    --color-bg:        var(--pw-cream);
+    --color-surface:   #FFFFFF;
+    --color-surface-alt: var(--pw-sand);
+    --color-text:      var(--pw-charcoal);
+    --color-text-soft: var(--pw-charcoal-60);
+    --color-text-mute: var(--pw-charcoal-30);
+    --color-border:    var(--pw-sand-deep);
+    --color-accent:    var(--pw-coral);
+    --color-accent-deep: var(--pw-coral-deep);
+    --color-accent-soft: var(--pw-coral-soft);
+    --color-secondary: #E07A5F;
+}
+
+[data-palette="Terracotta & Oat"] {
+    --pw-cream:        #F7F1E8;
+    --pw-sand:         #EFE4CE;
+    --pw-sand-deep:    #DDCCAC;
+    --pw-charcoal:     #2C2520;
+    --pw-charcoal-60:  #5D5247;
+    --pw-charcoal-30:  #A09488;
+    --pw-coral:        #C4603A;
+    --pw-coral-deep:   #9E4623;
+    --pw-coral-soft:   #F3D5C3;
+
+    --color-bg:        var(--pw-cream);
+    --color-surface:   #FFFFFF;
+    --color-surface-alt: var(--pw-sand);
+    --color-text:      var(--pw-charcoal);
+    --color-text-soft: var(--pw-charcoal-60);
+    --color-text-mute: var(--pw-charcoal-30);
+    --color-border:    var(--pw-sand-deep);
+    --color-accent:    var(--pw-coral);
+    --color-accent-deep: var(--pw-coral-deep);
+    --color-accent-soft: var(--pw-coral-soft);
+    --color-secondary: #7D9B76;
+}
+
+[data-palette="Forest & Bone"] {
+    --pw-cream:        #F7F4EB;
+    --pw-sand:         #EBE5D3;
+    --pw-sand-deep:    #D8CFB4;
+    --pw-charcoal:     #1F2A22;
+    --pw-charcoal-60:  #4E5B50;
+    --pw-charcoal-30:  #93A097;
+    --pw-coral:        #3E7B4F;
+    --pw-coral-deep:   #24592F;
+    --pw-coral-soft:   #CFE1D2;
+
+    --color-bg:        var(--pw-cream);
+    --color-surface:   #FFFFFF;
+    --color-surface-alt: var(--pw-sand);
+    --color-text:      var(--pw-charcoal);
+    --color-text-soft: var(--pw-charcoal-60);
+    --color-text-mute: var(--pw-charcoal-30);
+    --color-border:    var(--pw-sand-deep);
+    --color-accent:    var(--pw-coral);
+    --color-accent-deep: var(--pw-coral-deep);
+    --color-accent-soft: var(--pw-coral-soft);
+    --color-secondary: #D4A24C;
+}
+
+[data-palette="Plum & Blush"] {
+    --pw-cream:        #FAF4F4;
+    --pw-sand:         #F1E1E4;
+    --pw-sand-deep:    #E2C8CF;
+    --pw-charcoal:     #2F1F2B;
+    --pw-charcoal-60:  #614F5C;
+    --pw-charcoal-30:  #A091A0;
+    --pw-coral:        #7A3D63;
+    --pw-coral-deep:   #5A2547;
+    --pw-coral-soft:   #E7C9DA;
+
+    --color-bg:        var(--pw-cream);
+    --color-surface:   #FFFFFF;
+    --color-surface-alt: var(--pw-sand);
+    --color-text:      var(--pw-charcoal);
+    --color-text-soft: var(--pw-charcoal-60);
+    --color-text-mute: var(--pw-charcoal-30);
+    --color-border:    var(--pw-sand-deep);
+    --color-accent:    var(--pw-coral);
+    --color-accent-deep: var(--pw-coral-deep);
+    --color-accent-soft: var(--pw-coral-soft);
+    --color-secondary: #D4748A;
+}

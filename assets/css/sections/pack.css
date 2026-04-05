@@ -8,7 +8,7 @@
 
 .pw-pack-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(var(--pw-pack-min), 1fr));
     gap: var(--sp-5);
     max-width: 112rem;
     margin: 0 auto;

@@ -103,11 +103,35 @@
                 "description": "Public phone number displayed in the footer and tap-to-call on mobile.",
                 "group": "site-wide"
             },
-            "show_hero": {
-                "type": "boolean",
-                "default": true,
-                "description": "Show the hero with the bone-shaped call-to-action button.",
-                "group": "homepage"
+            "design_mode": {
+                "type": "select",
+                "options": ["Narrative", "Minimal"],
+                "default": "Narrative",
+                "description": "Narrative = bone-shaped cards & flourishes. Minimal = pill cards, quieter motion.",
+                "group": "site-wide"
+            },
+            "palette": {
+                "type": "select",
+                "options": [
+                    "Coral & Cream",
+                    "Sage & Linen",
+                    "Rose & Ivory",
+                    "Charcoal & Mustard",
+                    "Ocean & Sand",
+                    "Terracotta & Oat",
+                    "Forest & Bone",
+                    "Plum & Blush"
+                ],
+                "default": "Coral & Cream",
+                "description": "Preset color palette. Accent color below fine-tunes the highlight hue on top.",
+                "group": "site-wide"
+            },
+            "card_size": {
+                "type": "select",
+                "options": ["Cozy", "Default", "Roomy"],
+                "default": "Default",
+                "description": "Size of cards across the homepage (pack, services, pricing).",
+                "group": "site-wide"
             },
             "hero_title": {
                 "type": "text",
@@ -179,12 +203,6 @@
                 "type": "boolean",
                 "default": true,
                 "description": "Show the newsletter signup block with Join the Pack copy.",
-                "group": "site-wide"
-            },
-            "show_sticky_cta": {
-                "type": "boolean",
-                "default": true,
-                "description": "Show a sticky booking bar at the bottom of the screen on mobile (reuses the hero CTA).",
                 "group": "site-wide"
             }
         }
